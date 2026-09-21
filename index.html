@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Afagh Mulazadeh — PhD researcher applying AI and computational methods to understand how evidence shapes political decision-making.">
+<title>Afagh Mulazadeh — AI, Evidence, and Democratic Governance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111827;--body:#374151;--mid:#6b7280;--light:#9ca3af;--faint:#e5e7eb;--wash:#f9fafb;--bg:#fff;--deep:#0f172a;--blue:#1e40af;--blue-soft:#dbeafe;--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif;--col:min(680px,100% - 48px);--wide:min(960px,100% - 48px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#f3f4f6;--body:#d1d5db;--mid:#9ca3af;--light:#6b7280;--faint:#1f2937;--wash:#111827;--bg:#0b0f19;--deep:#f8fafc;--blue:#60a5fa;--blue-soft:#1e293b}}
+:root[data-theme="dark"]{--ink:#f3f4f6;--body:#d1d5db;--mid:#9ca3af;--light:#6b7280;--faint:#1f2937;--wash:#111827;--bg:#0b0f19;--deep:#f8fafc;--blue:#60a5fa;--blue-soft:#1e293b}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--sans);font-size:15px;line-height:1.7;color:var(--body);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);border-bottom:1px solid var(--faint);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+@media(prefers-color-scheme:dark){header{background:rgba(11,15,25,.92)}}
+header .w{width:var(--wide);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 24px}
+header .logo{font-family:var(--serif);font-size:20px;color:var(--ink);text-decoration:none}
+header nav{display:flex;gap:24px}
+header nav a{font-size:13px;font-weight:500;color:var(--mid);text-decoration:none;transition:color .15s}
+header nav a:hover{color:var(--blue)}
+
+/* HERO */
+.hero{width:100%;background:var(--wash);border-bottom:1px solid var(--faint);padding:64px 24px 56px}
+.hero .w{width:var(--wide);margin:0 auto}
+.hero h1{font-family:var(--serif);font-size:44px;font-weight:400;line-height:1.08;color:var(--ink);letter-spacing:-.02em;margin-bottom:16px}
+@media(max-width:720px){.hero h1{font-size:32px}}
+.hero .lead{font-size:16px;color:var(--body);max-width:540px;margin-bottom:20px;line-height:1.65}
+.hero .affil{font-size:13px;color:var(--mid);line-height:1.9}
+.hero .links{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .links a{font-size:13px;font-weight:500;color:var(--blue);text-decoration:none;padding:6px 16px;border:1px solid var(--blue);border-radius:6px;transition:all .15s}
+.hero .links a:hover{background:var(--blue);color:#fff}
+.hero-photo{width:240px;height:300px;border-radius:10px;background:var(--faint);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--light)}
+@media(max-width:720px){.hero-photo{width:160px;height:200px}}
+
+/* KEY NUMBERS */
+.numbers{width:100%;border-bottom:1px solid var(--faint);padding:32px 24px}
+.numbers .w{width:var(--wide);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+@media(max-width:720px){.numbers .w{grid-template-columns:repeat(2,1fr)}}
+.num-item .big{font-family:var(--serif);font-size:32px;color:var(--ink);line-height:1.1}
+.num-item .label{font-size:12px;color:var(--mid);margin-top:4px;line-height:1.4}
+
+/* SECTIONS */
+.section{padding:56px 24px;border-bottom:1px solid var(--faint)}
+.section .w{width:var(--col);margin:0 auto}
+.section.wide .w{width:var(--wide)}
+.section h2{font-family:var(--serif);font-size:30px;font-weight:400;color:var(--ink);margin-bottom:24px}
+.section h3{font-size:14px;font-weight:600;color:var(--ink);margin:28px 0 10px}
+.section p{margin-bottom:14px}
+
+/* PUBS */
+.pub{margin-bottom:28px;padding:20px;border:1px solid var(--faint);border-radius:10px;background:var(--wash);transition:border-color .15s}
+.pub:hover{border-color:var(--blue)}
+.pub .title{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--ink);line-height:1.35;margin-bottom:6px}
+.pub .venue{font-size:13px;color:var(--mid);margin-bottom:8px}
+.pub .desc{font-size:14px;color:var(--body);line-height:1.6}
+.pub .badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.b-pub{background:#dcfce7;color:#166534}
+.b-acc{background:var(--blue-soft);color:var(--blue)}
+.b-rev{background:#fef3c7;color:#92400e}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .b-pub{background:#14532d;color:#86efac}
+  :root:not([data-theme="light"]) .b-acc{background:#1e3a5f;color:#93c5fd}
+  :root:not([data-theme="light"]) .b-rev{background:#451a03;color:#fcd34d}
+  :root:not([data-theme="light"]) .pub{background:var(--wash);border-color:var(--faint)}
+}
+
+/* CONF */
+.conf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:720px){.conf-grid{grid-template-columns:1fr}}
+.conf{padding:14px 16px;border:1px solid var(--faint);border-radius:8px;background:var(--bg)}
+.conf .c-name{font-weight:600;font-size:13px;color:var(--ink)}
+.conf .c-detail{font-size:12px;color:var(--mid)}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--faint)}
+.tl{position:relative;margin-bottom:24px}
+.tl::before{content:'';position:absolute;left:-24px;top:6px;width:11px;height:11px;border-radius:50%;border:2px solid var(--blue);background:var(--bg)}
+.tl .role{font-weight:600;font-size:15px;color:var(--ink)}
+.tl .org{font-size:14px;color:var(--mid)}
+.tl .date{font-size:12px;color:var(--light)}
+.tl .desc{font-size:14px;color:var(--body);margin-top:4px}
+.tl .sub{font-size:13px;color:var(--mid);font-style:italic;margin-top:2px}
+
+/* SKILLS */
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+@media(max-width:560px){.skills{grid-template-columns:1fr}}
+.sk h3{margin:0 0 4px}
+.sk p{font-size:13px;color:var(--mid);margin:0;line-height:1.6}
+
+/* TEACH */
+.teach{margin-bottom:14px}
+.teach .tt{font-weight:600;font-size:14px;color:var(--ink)}
+.teach .td{font-size:13px;color:var(--mid)}
+
+/* CONTACT */
+.contact-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+.contact-row a{font-size:14px}
+
+/* FOOTER */
+footer{padding:32px 24px}
+footer .w{width:var(--col);margin:0 auto;font-size:12px;color:var(--light)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="w">
+    <a href="#" class="logo">Afagh Mulazadeh</a>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="w">
+    <div>
+      <h1>Afagh Mulazadeh</h1>
+      <p class="lead">PhD researcher applying AI and large-scale computational methods to understand how research evidence shapes political decision-making in democratic institutions.</p>
+      <div class="affil">
+        PhD Researcher, STEaPP (Faculty of Engineering Sciences), UCL<br>
+        Elsevier Full Scholarship · Supervised by Dr Chris Tyler<br>
+        Previously Visiting Researcher, IPZ, University of Zurich
+      </div>
+      <div class="links">
+        <a href="mailto:afaghmulazadeh@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/afagh-mulazadeh-673a1787/" target="_blank">LinkedIn</a>
+        <a href="https://orcid.org" target="_blank">ORCID</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- KEY NUMBERS -->
+<div class="numbers">
+  <div class="w">
+    <div class="num-item"><div class="big">353,522</div><div class="label">Parliamentary speeches analysed</div></div>
+    <div class="num-item"><div class="big">2,529</div><div class="label">Research briefings matched</div></div>
+    <div class="num-item"><div class="big">91.7%</div><div class="label">Evidence use unattributed</div></div>
+    <div class="num-item"><div class="big">9</div><div class="label">LLMs benchmarked vs human coders</div></div>
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<div class="section" id="research">
+  <div class="w">
+    <h2>Research</h2>
+    <p>My doctoral research asks a simple question with complex implications: when politicians speak in Parliament, where does their information come from? I built a computational pipeline that detects, classifies, and traces research evidence use in UK parliamentary debate, matching speeches against briefings produced by the House of Commons Library, House of Lords Library, and the Parliamentary Office of Science and Technology (POST).</p>
+    <p>I developed the <strong>Evidence in Parliament Annotation Scheme (EPAS)</strong>, a five-dimensional framework covering attribution, grounding, source type, use function, and epistemic stance. Benchmarking nine LLMs against five human annotators, I found that models and humans exhibit parallel failure patterns on interpretive dimensions (use function, epistemic stance) while converging on detection-level tasks (source type, grounding) — suggesting the difficulty is intrinsic to the phenomenon, not the instrument.</p>
+    <p>The research produced an interactive <a href="https://uk-parliament-evidence-tracker.vercel.app" target="_blank">evidence tracker tool</a> developed with UK parliamentary research services, currently in discussions for licensing as a live detection system.</p>
+
+    <h3>Current directions</h3>
+    <p><strong>Open-world evidence source mapping:</strong> Extending the pipeline beyond parliamentary briefings to include social media, news, think tank reports, government policy papers, and academic publications — mapping the full landscape of sources that politicians draw on and tracing knowledge networks and influence pathways across source types.</p>
+    <p><strong>LLMs as epistemic actors:</strong> Investigating how language models handle evidence when embedded in policy research workflows — what sources they draw on, how they assign credibility, and how their evidence-use behaviour compares to that of human politicians and policy advisors. My interview data from the UK Parliament confirms that actors across the parliamentary ecosystem are already using generative AI for evidence synthesis, creating a recursive loop in which AI-mediated evidence feeds into human decision-making.</p>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="section" id="publications">
+  <div class="w">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <div class="title">Six ways to put the public at the heart of science and policy</div>
+      <div class="venue">Nature, July 2026 (multi-author commentary) <span class="badge b-pub">Published</span></div>
+      <div class="desc">A commentary on how democratic institutions can better integrate public voices into science-policy interfaces, drawing on experiences from the UK, Switzerland, and the EU.</div>
+    </div>
+
+    <div class="pub">
+      <div class="title">The UK Parliament Evidence Tracker: An AI-Powered Tool for Monitoring Research Evidence Use in Legislative Debate</div>
+      <div class="venue">Data for Policy 2026, Barcelona <span class="badge b-acc">Accepted paper</span></div>
+      <div class="desc">Introduces the evidence tracker pipeline and dashboard, demonstrating how NLP can map the flow of research evidence into parliamentary debate at scale. Shows that 91.7% of detected evidence use is unattributed, making the work of parliamentary research services overwhelmingly invisible in the public record. Being developed into a full article for <em>Data & Policy</em> (Cambridge University Press).</div>
+    </div>
+
+    <div class="pub">
+      <div class="title">Who Counts as Evidence-Based? Knowledge Practices in British and Swiss Parliamentary Speech</div>
+      <div class="venue">ICML 2026, Seoul <span class="badge b-acc">Accepted poster</span></div>
+      <div class="desc">A comparative analysis of evidence-use patterns across the UK and Swiss parliaments, developed in collaboration with the UZH-ETH DemocraSci team. Examines how different legislative systems and political cultures shape which sources count as "evidence" in parliamentary discourse.</div>
+    </div>
+
+    <div class="pub">
+      <div class="title">EPAS: A Multi-Dimensional Benchmark for Evidence Use in Parliamentary Discourse</div>
+      <div class="venue">NeurIPS 2026, Datasets & Benchmarks <span class="badge b-rev">Under review</span></div>
+      <div class="desc">Presents the EPAS framework: five interrelated annotation dimensions, conditional coding logic, a 200-sentence gold standard coded by five human annotators, and benchmark results across nine LLMs. Key finding: LLMs and humans struggle on the same interpretive dimensions, while performing comparably on detection-level tasks.</div>
+    </div>
+
+    <div class="pub">
+      <div class="title">Science-Informed Claims in Swiss Parliamentary Debates</div>
+      <div class="venue">Science Communication, Sage <span class="badge b-rev">Under review</span></div>
+      <div class="desc">Cross-national extension applying evidence detection methods to the Swiss Federal Assembly, co-authored with the DemocraSci team. Examines how science-informed claims are distributed across parties, chambers, and policy domains in a consensus democracy.</div>
+    </div>
+
+    <h3>Conferences</h3>
+    <div class="conf-grid">
+      <div class="conf"><div class="c-name">Data for Policy 2026</div><div class="c-detail">Barcelona · Paper presentation</div></div>
+      <div class="conf"><div class="c-name">ICML 2026</div><div class="c-detail">Seoul · Poster presentation</div></div>
+      <div class="conf"><div class="c-name">MetaScience 2025</div><div class="c-detail">London</div></div>
+      <div class="conf"><div class="c-name">EPTA: AI and Democracy 2024</div><div class="c-detail">Oslo, Norway</div></div>
+      <div class="conf"><div class="c-name">Atlanta Conf. on Science & Innovation Policy 2023</div><div class="c-detail">Georgia, USA</div></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section" id="experience">
+  <div class="w">
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <div class="tl">
+        <div class="role">PhD Researcher</div>
+        <div class="org">University College London — STEaPP, Faculty of Engineering Sciences</div>
+        <div class="date">2021 – 2026 · Elsevier Full Scholarship · Defence October 2026</div>
+        <div class="desc">Built an NLP pipeline processing 353K speeches and 2,529 briefings, developed the EPAS framework, benchmarked nine LLMs, and created an interactive evidence tracker with parliamentary research services.</div>
+      </div>
+
+      <div class="tl">
+        <div class="role">Visiting Researcher</div>
+        <div class="org">University of Zurich — Department of Political Science (IPZ)</div>
+        <div class="date">2025 – 2026</div>
+        <div class="desc">Comparative research on evidence use in the UK and Swiss parliaments with the UZH-ETH DemocraSci team and the ETH Swiss Data Science Center. Extended EPAS to Swiss parliamentary debates.</div>
+      </div>
+
+      <div class="tl">
+        <div class="role">Senior Parliamentary Researcher</div>
+        <div class="org">UK House of Lords</div>
+        <div class="date">2022 – 2023</div>
+        <div class="desc">Lead Coordinator of the All-Party Parliamentary Group (APPG) on the Metaverse and Web 3.0. Organised international evidence sessions, initiated a youth forum on AI and emerging technologies, supported the drafting of relevant bills, and authored speeches and reports.</div>
+      </div>
+
+      <div class="tl">
+        <div class="role">Parliamentary Researcher</div>
+        <div class="org">UK House of Lords</div>
+        <div class="date">2014 – 2022</div>
+        <div class="desc">Eight years of parliamentary research, policy analysis, and legislative support across multiple policy areas.</div>
+      </div>
+
+      <div class="tl">
+        <div class="role">Teaching Assistant — Business and Human Rights</div>
+        <div class="org">Johns Hopkins SAIS</div>
+        <div class="date">2021</div>
+        <div class="desc">Created presentations, infographics, exercises, and assessment materials. Increased student participation and engagement.</div>
+      </div>
+
+      <div class="tl">
+        <div class="role">Geopolitical Analyst (Intern)</div>
+        <div class="org">Gatehouse Advisory Partners</div>
+        <div class="date">2020</div>
+      </div>
+
+    </div>
+
+    <h3>Education</h3>
+    <div class="timeline">
+      <div class="tl">
+        <div class="role">PhD, AI for Evidence-Informed Policymaking</div>
+        <div class="org">University College London — STEaPP (Faculty of Engineering Sciences)</div>
+        <div class="date">2021 – 2026 · Elsevier Full Scholarship</div>
+      </div>
+      <div class="tl">
+        <div class="role">Data Science Summer School</div>
+        <div class="org">Barcelona School of Economics</div>
+        <div class="date">2022 · Python, R, Deep Learning, Text as Data</div>
+      </div>
+      <div class="tl">
+        <div class="role">MA, International Economics & International Law</div>
+        <div class="org">Johns Hopkins School of Advanced International Studies (SAIS)</div>
+      </div>
+      <div class="tl">
+        <div class="role">MA, International Studies & Diplomacy</div>
+        <div class="org">SOAS, University of London</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TEACHING & SKILLS -->
+<div class="section" id="teaching">
+  <div class="w">
+    <h2>Teaching and Volunteering</h2>
+
+    <div class="teach">
+      <div class="tt">Senior Postgraduate Teaching Assistant — "How to Change the World"</div>
+      <div class="td">UCL STEaPP · Transdisciplinary engineering and policy module · Designed learning materials and led seminars</div>
+    </div>
+    <div class="teach">
+      <div class="tt">Teaching Assistant — Business and Human Rights</div>
+      <div class="td">Johns Hopkins SAIS · Created presentations, infographics, exercises, and assessment materials</div>
+    </div>
+    <div class="teach">
+      <div class="tt">Debate Club Leader — Debate Mate</div>
+      <div class="td">Convent of Jesus and Mary Language College · Students aged 11–16 · Doubled club membership · Prepared students for regional and national competitions</div>
+    </div>
+    <div class="teach">
+      <div class="tt">PhD Book Seminars</div>
+      <div class="td">UCL · Freire's <em>Pedagogy of the Oppressed</em> · Juma's <em>Innovation and Its Enemies</em></div>
+    </div>
+    <div class="teach">
+      <div class="tt">English Teacher for Resettled Refugees</div>
+      <div class="td">Multi-university volunteering initiative</div>
+    </div>
+    <div class="teach">
+      <div class="tt">Deputy Member of UK Youth Parliament</div>
+      <div class="td">Elected by over 11,000 young people to represent the London Borough of Barnet · Ran campaigns on youth issues</div>
+    </div>
+
+    <h3>Technical skills</h3>
+    <div class="skills">
+      <div class="sk">
+        <h3>NLP and Machine Learning</h3>
+        <p>Sentence transformers, FAISS, cross-encoder reranking, Elasticsearch BM25, spaCy NER, LLM-based classification (commercial and open-weight models)</p>
+      </div>
+      <div class="sk">
+        <h3>Statistical Analysis</h3>
+        <p>Multilevel regression (GLMMs), negative binomial models, overdispersion diagnostics, interaction effects (R, Python)</p>
+      </div>
+      <div class="sk">
+        <h3>Web Development</h3>
+        <p>React, TypeScript, Next.js, Supabase, Vercel — built the evidence tracker dashboard and coder annotation interface</p>
+      </div>
+      <div class="sk">
+        <h3>Languages</h3>
+        <p>English, Arabic, Farsi (native); French (intermediate); German (developing)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <div class="w">
+    <h2>Contact</h2>
+    <p>I am based in London and open to conversations about research collaboration, postdoctoral opportunities, and the application of computational methods to democratic governance.</p>
+    <div class="contact-row">
+      <a href="mailto:afaghmulazadeh@gmail.com">afaghmulazadeh@gmail.com</a>
+      <a href="https://www.linkedin.com/in/afagh-mulazadeh-673a1787/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<footer><div class="w">&copy; 2026 Afagh Mulazadeh</div></footer>
+
+</body>
+</html>
