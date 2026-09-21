@@ -70,7 +70,7 @@ header nav a:hover::after{right:0}
 .hero h1{font-family:var(--serif);font-size:clamp(38px,6.2vw,60px);font-weight:400;line-height:1.02;color:var(--ink);letter-spacing:-.022em;margin-bottom:20px}
 .hero .lead{font-size:18.5px;line-height:1.6;color:var(--ink);font-weight:400;max-width:620px;margin-bottom:26px;letter-spacing:-.006em}
 .hero .lead em{font-style:normal;background:linear-gradient(transparent 68%,color-mix(in srgb,var(--accent) 20%,transparent) 0);padding:0 1px}
-.hero .affil{font-size:13.5px;color:var(--mid);line-height:1.85;padding-left:16px;border-left:2px solid color-mix(in srgb,var(--accent) 35%,transparent);max-width:560px}
+.hero .affil{font-size:13.5px;color:var(--mid);line-height:1.85;padding-left:16px;border-left:2px solid color-mix(in srgb,var(--accent) 35%,transparent);max-width:680px}
 .hero .affil strong{color:var(--ink);font-weight:600}
 .hero .links{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap}
 .btn{font-size:13.5px;font-weight:500;text-decoration:none;padding:9px 20px;border-radius:999px;border:1px solid var(--faint);background:var(--bg);color:var(--ink);transition:all .18s;box-shadow:var(--shadow)}
@@ -133,7 +133,8 @@ header nav a:hover::after{right:0}
 .timeline{display:flex;flex-direction:column;gap:6px}
 .tl{display:flex;gap:22px;padding:18px 16px;border-radius:12px;border:1px solid transparent;transition:background .18s,border-color .18s}
 .tl:hover{background:var(--wash);border-color:var(--hair)}
-.logo-tile{flex:none;width:100px;height:58px;border:1px solid var(--faint);border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;padding:7px 10px;overflow:hidden;box-shadow:0 1px 2px rgba(15,23,42,.05)}
+.tl:hover .logo-tile{border-color:color-mix(in srgb,var(--accent) 30%,transparent);box-shadow:0 2px 8px -2px rgba(15,23,42,.14)}
+.logo-tile{flex:none;width:116px;height:58px;border:1px solid var(--faint);border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;padding:8px 11px;overflow:hidden;box-shadow:0 1px 2px rgba(15,23,42,.05);transition:border-color .18s,box-shadow .18s}
 .logo-tile img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
 .logo-tile .mono{font-size:15px;font-weight:700;letter-spacing:.02em;color:#64748b}
 .tl .body{min-width:0;flex:1}
@@ -141,6 +142,7 @@ header nav a:hover::after{right:0}
 .tl .org{font-size:14px;color:var(--mid);margin-top:1px}
 .tl .date{font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--light);margin-top:6px}
 .tl .desc{font-size:14.5px;color:var(--body);margin-top:9px;line-height:1.65}
+.tl .sub{font-size:13.5px;color:var(--mid);margin-top:6px}
 @media(max-width:620px){
   .tl{gap:14px;flex-direction:column;padding:16px 0;border-radius:0;border:0;border-bottom:1px solid var(--hair)}
   .tl:hover{background:transparent;border-color:transparent;border-bottom-color:var(--hair)}
@@ -192,10 +194,10 @@ footer .w{width:var(--wide);margin:0 auto;display:flex;justify-content:space-bet
   <div class="w">
     <div class="eyebrow">AI · Evidence · Democratic Governance</div>
     <h1>Afagh Mulazadeh</h1>
-    <p class="lead">I built computational tools that trace how research evidence travels into political decision-making — and benchmarked <em>what AI systems can and cannot see</em> when they read a parliament.</p>
+    <p class="lead">I built computational tools that trace how research evidence travels into political decision-making.</p>
     <div class="affil">
       <strong>PhD completed at UCL STEaPP</strong> (Faculty of Engineering Sciences) · Defence October 2026<br>
-      Elsevier Full Scholarship · Supervised by Dr Chris Tyler<br>
+      Elsevier Full Scholarship · Supervised by Dr Chris Tyler and Dr Andrew Plume<br>
       Previously Visiting Researcher, IPZ, University of Zurich
     </div>
     <div class="links">
@@ -243,7 +245,7 @@ footer .w{width:var(--wide);margin:0 auto;display:flex;justify-content:space-bet
     <div class="pub s-pub">
       <div class="meta"><span class="venue">Nature · July 2026</span><span class="badge b-pub">Published</span></div>
       <div class="title">Six ways to put the public at the heart of science and policy</div>
-      <div class="desc">Multi-author commentary on how democratic institutions can better integrate public voices into science–policy interfaces, drawing on experiences from the UK, Switzerland, and the EU.</div>
+      <div class="desc">A multi-author commentary setting out six practical mechanisms for embedding public voice in science advice, drawing on experience from the UK, Switzerland, and the EU. It argues that participation works best when built into the structure of advisory processes rather than bolted on as late-stage consultation. Written for the institutional designers and science advisers who shape those processes, rather than for a purely academic audience.</div>
     </div>
 
     <div class="pub s-acc">
@@ -255,28 +257,28 @@ footer .w{width:var(--wide);margin:0 auto;display:flex;justify-content:space-bet
     <div class="pub s-acc">
       <div class="meta"><span class="venue">ICML 2026</span><span class="badge b-acc">Accepted poster</span></div>
       <div class="title">Who Counts as Evidence-Based? Knowledge Practices in British and Swiss Parliamentary Speech</div>
-      <div class="desc">A comparative analysis of evidence-use patterns across the UK and Swiss parliaments, developed in collaboration with the UZH–ETH DemocraSci team. Examines how different legislative systems and political cultures shape which sources count as "evidence" in parliamentary discourse.</div>
+      <div class="desc">A comparative analysis of evidence-use patterns across the UK and Swiss parliaments, developed with the UZH–ETH DemocraSci team. The same detection and classification pipeline is applied to both corpora, so cross-national differences reflect parliamentary practice rather than differences in measurement. Examines how legislative design and political culture shape which sources come to count as "evidence" in debate.</div>
     </div>
 
     <div class="pub s-rev">
       <div class="meta"><span class="venue">NeurIPS 2026 · Datasets &amp; Benchmarks</span><span class="badge b-rev">Under review</span></div>
       <div class="title">EPAS: A Multi-Dimensional Benchmark for Evidence Use in Parliamentary Discourse</div>
-      <div class="desc">Presents the EPAS framework: five interrelated annotation dimensions, conditional coding logic, a 200-sentence gold standard coded by five human annotators, and benchmark results across nine LLMs. Key finding: LLMs and humans struggle on the same interpretive dimensions, while performing comparably on detection-level tasks.</div>
+      <div class="desc">Presents the EPAS framework: five interrelated annotation dimensions, conditional coding logic, a 200-sentence gold standard coded by five human annotators, and benchmark results across nine LLMs. Models and humans struggle on the same interpretive dimensions — use function and epistemic stance — while performing comparably on detection-level tasks such as source type and grounding. That parallel failure pattern suggests the remaining difficulty is intrinsic to interpreting evidence use, not an artefact of the annotation instrument.</div>
     </div>
 
     <div class="pub s-rev">
       <div class="meta"><span class="venue">Science Communication · Sage</span><span class="badge b-rev">Under review</span></div>
       <div class="title">Science-Informed Claims in Swiss Parliamentary Debates</div>
-      <div class="desc">Cross-national extension applying evidence detection methods to the Swiss Federal Assembly, co-authored with the DemocraSci team. Examines how science-informed claims are distributed across parties, chambers, and policy domains in a consensus democracy.</div>
+      <div class="desc">A cross-national extension applying the evidence detection methods to the Swiss Federal Assembly, co-authored with the DemocraSci team. Examines how science-informed claims are distributed across parties, chambers, and policy domains in a consensus democracy. Provides a baseline for comparing how research evidence surfaces in consensus systems against the majoritarian Westminster case.</div>
     </div>
 
     <h3>Conferences</h3>
     <div class="conf-grid">
-      <div class="conf"><div class="c-name">Data for Policy 2026</div><div class="c-detail">Paper presentation</div></div>
-      <div class="conf"><div class="c-name">ICML 2026</div><div class="c-detail">Poster presentation</div></div>
-      <div class="conf"><div class="c-name">MetaScience 2025</div><div class="c-detail">Presentation</div></div>
-      <div class="conf"><div class="c-name">EPTA: AI and Democracy 2024</div><div class="c-detail">Presentation</div></div>
-      <div class="conf"><div class="c-name">Atlanta Conference on Science &amp; Innovation Policy 2023</div><div class="c-detail">Presentation</div></div>
+      <div class="conf"><div class="c-name">Data for Policy 2026</div><div class="c-detail">Barcelona · Paper presentation</div></div>
+      <div class="conf"><div class="c-name">ICML 2026</div><div class="c-detail">Seoul · Poster presentation</div></div>
+      <div class="conf"><div class="c-name">MetaScience 2025</div><div class="c-detail">London · Presentation</div></div>
+      <div class="conf"><div class="c-name">EPTA: AI and Democracy 2024</div><div class="c-detail">Oslo · Presentation</div></div>
+      <div class="conf"><div class="c-name">Atlanta Conference on Science &amp; Innovation Policy 2023</div><div class="c-detail">Georgia, USA · Presentation</div></div>
     </div>
   </div>
 </div>
@@ -331,7 +333,7 @@ footer .w{width:var(--wide);margin:0 auto;display:flex;justify-content:space-bet
       </div>
 
       <div class="tl">
-        <div class="logo-tile"><img src="assets/logos/jhu.png" alt="Johns Hopkins University" loading="lazy"></div>
+        <div class="logo-tile"><img src="assets/logos/sais.svg" alt="Johns Hopkins University" loading="lazy"></div>
         <div class="body">
           <div class="role">Teaching Assistant — Business and Human Rights</div>
           <div class="org">Johns Hopkins School of Advanced International Studies (SAIS)</div>
@@ -360,6 +362,7 @@ footer .w{width:var(--wide);margin:0 auto;display:flex;justify-content:space-bet
           <div class="role">PhD, AI for Evidence-Informed Policymaking</div>
           <div class="org">University College London — STEaPP, Faculty of Engineering Sciences</div>
           <div class="date">2021 – 2026 · Completed and submitted · Defence October 2026 · Elsevier Full Scholarship</div>
+          <div class="sub">Supervised by Dr Chris Tyler and Dr Andrew Plume</div>
         </div>
       </div>
 
@@ -373,7 +376,7 @@ footer .w{width:var(--wide);margin:0 auto;display:flex;justify-content:space-bet
       </div>
 
       <div class="tl">
-        <div class="logo-tile"><img src="assets/logos/jhu.png" alt="Johns Hopkins University" loading="lazy"></div>
+        <div class="logo-tile"><img src="assets/logos/sais.svg" alt="Johns Hopkins University" loading="lazy"></div>
         <div class="body">
           <div class="role">MA, International Economics &amp; International Law</div>
           <div class="org">Johns Hopkins School of Advanced International Studies (SAIS)</div>
@@ -385,6 +388,15 @@ footer .w{width:var(--wide);margin:0 auto;display:flex;justify-content:space-bet
         <div class="body">
           <div class="role">MA, International Studies &amp; Diplomacy</div>
           <div class="org">SOAS, University of London</div>
+        </div>
+      </div>
+
+      <div class="tl">
+        <div class="logo-tile"><img src="assets/logos/soas.png" alt="SOAS, University of London" loading="lazy"></div>
+        <div class="body">
+          <div class="role">BA (Hons), International Relations</div>
+          <div class="org">SOAS, University of London</div>
+          <div class="date">2016 – 2019</div>
         </div>
       </div>
 
